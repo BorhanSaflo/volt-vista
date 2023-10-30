@@ -1,1 +1,4 @@
-# comp-3110-project
+# Volt Vista
+
+Project for comp-3110
+
