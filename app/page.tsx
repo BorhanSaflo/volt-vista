@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 const stats = [
   {
     title: "Total Cost",
-    total: "$0.4K",
-    rate: "0.43%",
+    total: "$423",
+    rate: "5.43%",
     levelUp: true,
     levelDown: false,
     icon: <CircleDollarSign size={24} />,
@@ -26,15 +26,15 @@ const stats = [
   {
     title: "Total Usage",
     total: "20 kWh",
-    rate: "0.43%",
+    rate: "8.12%",
     levelUp: true,
     levelDown: false,
     icon: <Zap size={24} />,
   },
   {
     title: "Total Savings",
-    total: "$0.1K",
-    rate: "0.43%",
+    total: "$23",
+    rate: "1.5%",
     levelUp: true,
     levelDown: false,
     icon: <Leaf size={24} />,
@@ -42,7 +42,7 @@ const stats = [
   {
     title: "Active Devices",
     total: "20",
-    rate: "0.43%",
+    rate: "5%",
     levelUp: false,
     levelDown: true,
     icon: <PlugZap size={24} />,
