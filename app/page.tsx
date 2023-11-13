@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import React from "react";
 import ChartOne from "@/components/Graph/LineGraph";
 import CardDataStats from "@/components/CardDataStats";
@@ -6,12 +5,8 @@ import { CircleDollarSign, Leaf, PlugZap, Zap } from "lucide-react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Dashboard | Volt Vista",
-  description: "Volt Vista",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 const stats = [
