@@ -8,7 +8,7 @@ const options: ApexOptions = {
   legend: {
     show: false,
   },
-  colors: ["#6fbf22"],
+  colors: ["#10e846"],
   chart: {
     fontFamily: "Satoshi, sans-serif",
     height: 335,
@@ -56,7 +56,7 @@ const options: ApexOptions = {
   },
   markers: {
     size: 4,
-    colors: "#6fbf22",
+    colors: "#10e846",
     strokeWidth: 0,
     fillOpacity: 1,
     discrete: [],
