@@ -41,7 +41,7 @@ export default function CardDataStats({
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${mouseX}px ${mouseY}px,
-              rgba(14, 165, 5, 0.1),
+              rgba(${levelUp ? "0, 255, 0" : levelDown ? "255, 0, 0" : "0, 0, 0"}, 0.1),
               transparent 80%
             )
           `,
