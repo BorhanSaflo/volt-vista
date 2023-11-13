@@ -25,7 +25,7 @@ const stats = [
   },
   {
     title: "Total Usage",
-    total: "20 Kwh",
+    total: "20 kWh",
     rate: "0.43%",
     levelUp: true,
     levelDown: false,

@@ -7,23 +7,12 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false })
 const options: ApexOptions = {
   legend: {
     show: false,
-    position: "top",
-    horizontalAlign: "left",
   },
   colors: ["#6fbf22"],
   chart: {
     fontFamily: "Satoshi, sans-serif",
     height: 335,
     type: "area",
-    dropShadow: {
-      enabled: true,
-      color: "#623CEA14",
-      top: 10,
-      blur: 4,
-      left: 0,
-      opacity: 0.1,
-    },
-
     toolbar: {
       show: false,
     },
@@ -67,11 +56,8 @@ const options: ApexOptions = {
   },
   markers: {
     size: 4,
-    colors: "#fff",
-    strokeColors: ["#6fbf22"],
-    strokeWidth: 3,
-    strokeOpacity: 0.9,
-    strokeDashArray: 0,
+    colors: "#6fbf22",
+    strokeWidth: 0,
     fillOpacity: 1,
     discrete: [],
     hover: {
@@ -109,7 +95,12 @@ const options: ApexOptions = {
       },
     },
     min: 0,
-    max: 100,
+    max: 1200,
+    labels: {
+      formatter: (value: number) => {
+        return value + " kWh";
+      },
+    },
   },
 };
 
@@ -125,7 +116,7 @@ export default function ChartOne() {
     series: [
       {
         name: "Usage",
-        data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30, 45],
+        data: [845, 854, 970, 890, 900, 910, 840, 930, 790, 950, 960, 890],
       },
     ],
   });
