@@ -1,5 +1,8 @@
-import { ArrowDown, ArrowUp, LucideIcon } from "lucide-react";
+"use client";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import clsx from "clsx";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { MouseEvent, ReactNode } from "react";
 
 interface CardDataStatsProps {
   title: string;
@@ -7,7 +10,7 @@ interface CardDataStatsProps {
   rate: string;
   levelUp?: boolean;
   levelDown?: boolean;
-  Icon: LucideIcon;
+  icon: ReactNode;
 }
 
 export default function CardDataStats({
@@ -16,20 +19,42 @@ export default function CardDataStats({
   rate,
   levelUp,
   levelDown,
-  Icon,
+  icon,
 }: CardDataStatsProps) {
-  return (
-    <div className="rounded-sm border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark">
-      <div className="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
-        <Icon size={24} />
-      </div>
+  let mouseX = useMotionValue(0);
+  let mouseY = useMotionValue(0);
 
+  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+    let { left, top } = currentTarget.getBoundingClientRect();
+
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  return (
+    <div
+      className="group relative rounded-md border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark"
+      onMouseMove={handleMouseMove}>
+      <motion.div
+        className="pointer-events-none absolute -inset-px rounded-md opacity-0 transition duration-300 group-hover:opacity-100"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              650px circle at ${mouseX}px ${mouseY}px,
+              rgba(14, 165, 5, 0.1),
+              transparent 80%
+            )
+          `,
+        }}
+      />
+      <div className="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
+        {icon}
+      </div>
       <div className="mt-4 flex items-end justify-between">
         <div>
           <h4 className="text-title-md font-bold text-black dark:text-white">{total}</h4>
           <span className="text-sm font-medium">{title}</span>
         </div>
-
         <span
           className={clsx("flex items-center gap-1 text-sm font-medium", {
             "text-meta-3": levelUp,
