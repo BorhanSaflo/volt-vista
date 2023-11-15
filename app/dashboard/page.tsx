@@ -6,7 +6,7 @@ import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 
 export const metadata = {
-  title: "Dashboard | Volt Vista",
+  title: "Dashboard",
 };
 
 const stats = [
