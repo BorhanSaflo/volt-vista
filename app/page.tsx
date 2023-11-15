@@ -1,88 +1,50 @@
-import React from "react";
-import ChartOne from "@/components/Graph/LineGraph";
-import CardDataStats from "@/components/CardDataStats";
-import { CircleDollarSign, Leaf, PlugZap, Zap } from "lucide-react";
-import Sidebar from "@/components/Sidebar";
-import Header from "@/components/Header";
+import Link from "next/link";
 
-export const metadata = {
-  title: "Dashboard | Volt Vista",
-};
-
-const stats = [
-  {
-    title: "Total Cost",
-    total: "$423",
-    rate: "5.43%",
-    levelUp: true,
-    levelDown: false,
-    icon: <CircleDollarSign size={24} />,
-  },
-  {
-    title: "Total Usage",
-    total: "20 kWh",
-    rate: "8.12%",
-    levelUp: true,
-    levelDown: false,
-    icon: <Zap size={24} />,
-  },
-  {
-    title: "Total Savings",
-    total: "$23",
-    rate: "1.5%",
-    levelUp: true,
-    levelDown: false,
-    icon: <Leaf size={24} />,
-  },
-  {
-    title: "Active Devices",
-    total: "20",
-    rate: "5%",
-    levelUp: false,
-    levelDown: true,
-    icon: <PlugZap size={24} />,
-  },
-];
-
-export default function Dashboard() {
+export default function page() {
   return (
-    <div className="dark:bg-boxdark-2 dark:text-bodydark">
-      <div className="flex h-screen overflow-hidden">
-        <Sidebar />
-        <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-          <Header />
-          <main>
-            <div className="mx-auto max-w-screen-3xl p-4 md:p-6 2xl:p-10">
-              <div className="mb-6 flex gap-3">
-                <h2 className="text-title-md2 font-semibold text-black dark:text-white">
-                  Welcome back, User
-                </h2>
-              </div>
-              <div className="mb-4 grid grid-cols-12 gap-4 md:mb-6 md:gap-6 2xl:mb-7.5 2xl:gap-7.5">
-                <ChartOne />
-                <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
-                  <div className="mb-4 justify-between gap-4 sm:flex">
-                    <h4 className="text-xl font-semibold text-black dark:text-white">Feedback</h4>
-                  </div>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-                {stats.map((stat, index) => (
-                  <CardDataStats
-                    key={index}
-                    title={stat.title}
-                    total={stat.total}
-                    rate={stat.rate}
-                    levelUp={stat.levelUp}
-                    levelDown={stat.levelDown}
-                    icon={stat.icon}
-                  />
-                ))}
-              </div>
-            </div>
-          </main>
+    <section className="bg-[#000] relative h-screen w-screen">
+      <div className="z-0 top-0 right-0 absolute h-[100%] w-[100%] sm:w-[60%] opacity-40 sm:opacity-90">
+        <div className="relative h-full w-full overflow-hidden">
+          <video muted loop autoPlay className="z-0 object-cover h-full w-full">
+            <source src="./videos/video.mp4" type="video/mp4" />
+          </video>
+          <div className="z-10 w-full h-full top-0 left-0 absolute bg-gradient-to-t sm:bg-gradient-to-r from-[#000] via-[#0000009e] to-[#0000006a]" />
         </div>
       </div>
-    </div>
+      <div
+        className={
+          "hidden sm:block z-1 absolute w-[45%] h-screen top-0 left-0 opacity-10 bg-gradient-to-r from-green-600 to-[#000]"
+        }
+      />
+      <div
+        className="z-10 flex gap-45 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:translate-x-0 sm:translate-y-0 sm:top-[35%] sm:left-[15%] w-[90%]
+sm:max-w-[600px]">
+        <div className="flex flex-col justify-center gap-4 items-center text-center">
+          <h1 className="text-[#bae2c6] font-bold sm:text-[5rem] text-5xl">Volt Vista</h1>
+          <h2 className="text-[#BFDBC8] font-semibold sm:text-[1.6rem] text-lg">
+            Take{" "}
+            <span className="font-black bg-gradient-to-br from-green-200 via-green-300 to-green-400 text-transparent bg-clip-text">
+              Control{" "}
+            </span>
+            of Your Energy
+          </h2>
+          <p className={"text-sm text-[#BFDBC8] mb-2"}>
+            An energy monitoring and management solution tailored for homeowners.
+          </p>
+          <div className="flex flex-row gap-4 items-center">
+            <Link
+              className="bg-[#BFDBC8] rounded-md px-6 py-2 text-green-950 font-semibold"
+              href="/dashboard">
+              Dashboard
+            </Link>
+            <Link
+              className="bg-green-800 rounded-md px-6 py-2 text-[#eef1ef] font-semibold"
+              href="#">
+              Learn More
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

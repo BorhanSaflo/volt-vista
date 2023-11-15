@@ -3,30 +3,30 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { AlertOctagon, ChevronLeft, Home, LayoutGrid, Plug2, Settings } from "lucide-react";
+import { AlertOctagon, ChevronLeft, LayoutGrid, Plug2, Settings, Text } from "lucide-react";
 import { useNavbarStore } from "@/store/zustand";
 import clsx from "clsx";
 
 const links = [
   {
-    name: "Home",
-    href: "/",
-    icon: Home,
-  },
-  {
     name: "Dashboard",
-    href: "#",
+    href: "/dashboard",
     icon: LayoutGrid,
   },
   {
     name: "Devices",
-    href: "#",
+    href: "/devices",
     icon: Plug2,
   },
   {
     name: "Alerts",
-    href: "#",
+    href: "/alerts",
     icon: AlertOctagon,
+  },
+  {
+    name: "Feedback",
+    href: "/feedback",
+    icon: Text,
   },
   {
     name: "Settings",
