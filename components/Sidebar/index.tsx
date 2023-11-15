@@ -15,22 +15,22 @@ const links = [
   },
   {
     name: "Devices",
-    href: "/devices",
+    href: "/dashboard/devices",
     icon: Plug2,
   },
   {
     name: "Alerts",
-    href: "/alerts",
+    href: "/dashboard/alerts",
     icon: AlertOctagon,
   },
   {
     name: "Feedback",
-    href: "/feedback",
+    href: "/dashboard/feedback",
     icon: Text,
   },
   {
     name: "Settings",
-    href: "/settings",
+    href: "/dashboard/settings",
     icon: Settings,
   },
 ];
