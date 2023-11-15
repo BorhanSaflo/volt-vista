@@ -26,7 +26,7 @@ sm:max-w-[600px]">
             <span className="font-black bg-gradient-to-br from-green-200 via-green-300 to-green-400 text-transparent bg-clip-text">
               Control{" "}
             </span>
-            of Your Energy
+            Over Your Energy
           </h2>
           <p className={"text-sm text-[#BFDBC8] mb-2"}>
             An energy monitoring and management solution tailored for homeowners.
