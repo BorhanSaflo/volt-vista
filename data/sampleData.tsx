@@ -18,28 +18,28 @@ export const monthlyUsage: number[] = [
 export const dashboardStats: CardStats[] = [
   {
     title: "Total Cost",
-    total: "$235.50",
+    value: "$235.50",
     rate: "3.21%",
     levelUp: true,
     icon: <CircleDollarSign size={24} />,
   },
   {
     title: "Total Usage",
-    total: "32.5 kWh",
+    value: "32.5 kWh",
     rate: "12.45%",
     levelUp: true,
     icon: <Zap size={24} />,
   },
   {
     title: "Total Savings",
-    total: "$15.75",
+    value: "$15.75",
     rate: "0.9%",
     levelUp: true,
     icon: <Leaf size={24} />,
   },
   {
     title: "Active Devices",
-    total: "8",
+    value: "8",
     rate: "2%",
     levelUp: false,
     icon: <PlugZap size={24} />,
@@ -48,6 +48,7 @@ export const dashboardStats: CardStats[] = [
 
 export const deviceData: DeviceData[] = [
   {
+    id: 1,
     icon: Plug,
     name: "Laundry Day Washer",
     isOn: true,
@@ -56,6 +57,7 @@ export const deviceData: DeviceData[] = [
     note: "Run laundry only on weekends to save energy",
   },
   {
+    id: 2,
     icon: Plug,
     name: "Kitchen Fridge",
     isOn: false,
@@ -64,6 +66,7 @@ export const deviceData: DeviceData[] = [
     note: "Turn off when leaving for vacation",
   },
   {
+    id: 3,
     icon: Plug,
     name: "Morning Brew Coffee Maker",
     isOn: true,
@@ -72,6 +75,7 @@ export const deviceData: DeviceData[] = [
     note: "Brew coffee only on weekdays in the morning",
   },
   {
+    id: 4,
     icon: Lightbulb,
     name: "Cozy Evening Lamp",
     isOn: true,
@@ -80,6 +84,7 @@ export const deviceData: DeviceData[] = [
     note: "Turn on in the evenings for a cozy atmosphere",
   },
   {
+    id: 5,
     icon: Plug,
     name: "Nightly Dishes Dishwasher",
     isOn: false,
@@ -88,6 +93,7 @@ export const deviceData: DeviceData[] = [
     note: "Run dishwasher every night after dinner",
   },
   {
+    id: 6,
     icon: Plug,
     name: "Quick Meals Microwave",
     isOn: true,
@@ -96,6 +102,7 @@ export const deviceData: DeviceData[] = [
     note: "Use microwave for quick meals during weekdays",
   },
   {
+    id: 7,
     icon: Lightbulb,
     name: "Evening Entertainment Lights",
     isOn: false,
@@ -104,6 +111,7 @@ export const deviceData: DeviceData[] = [
     note: "Turn off the lights when not actively watching TV",
   },
   {
+    id: 8,
     icon: Plug,
     name: "Bedtime AC",
     isOn: true,
@@ -112,6 +120,7 @@ export const deviceData: DeviceData[] = [
     note: "Use AC only during hot nights for better sleep",
   },
   {
+    id: 9,
     icon: Plug,
     name: "Healthy Smoothie Blender",
     isOn: true,
@@ -120,6 +129,7 @@ export const deviceData: DeviceData[] = [
     note: "Make a healthy smoothie every morning",
   },
   {
+    id: 10,
     icon: Plug,
     name: "Work Computer",
     isOn: false,

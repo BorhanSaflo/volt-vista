@@ -1,4 +1,5 @@
 import { deviceData } from "@/data/sampleData"
+import Link from "next/link"
 
 export default function page() {
     return (
@@ -18,7 +19,8 @@ export default function page() {
             </div>
 
             {deviceData.map((device, key) => (
-                <div
+                <Link
+                    href={`/dashboard/devices/${device.id}`}
                     className={"grid grid-cols-5 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-12 md:px-6 2xl:px-7.5 text-sm text-black dark:text-white bg-[#fafafa] dark:bg-[#313235]"}
                     key={key}
                 >
@@ -29,7 +31,7 @@ export default function page() {
                     <div className="col-span-2 items-center hidden sm:flex">{device.location}</div>
                     <div className="col-span-2 flex items-center">{device.usage} kWh</div>
                     <div className="col-span-5 items-center hidden sm:flex">{device.note}</div>
-                </div>
+                </Link>
             ))}
         </div>
     )

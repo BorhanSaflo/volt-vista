@@ -28,7 +28,7 @@ export default function Dashboard() {
           <CardDataStats
             key={index}
             title={stat.title}
-            total={stat.total}
+            value={stat.value}
             rate={stat.rate}
             levelUp={stat.levelUp}
             icon={stat.icon}
