@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Bell } from "lucide-react";
 import clsx from "clsx";
+import { alerts } from "@/data/sampleData";
 
 const DropdownNotification = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -31,24 +32,6 @@ const DropdownNotification = () => {
     document.addEventListener("keydown", keyHandler);
     return () => document.removeEventListener("keydown", keyHandler);
   });
-
-  const notifications = [
-    {
-      title: "New Device Added",
-      description: "You have added a new smart plug",
-      date: "2 hours ago",
-    },
-    {
-      title: "Consumption Alert",
-      description: "Your device #8 has exceeded the limit",
-      date: "10 hours ago",
-    },
-    {
-      title: "New Device Added",
-      description: "You have added a new smart bulb",
-      date: "12 hours ago",
-    },
-  ];
 
   return (
     <li className="relative">
@@ -82,7 +65,7 @@ const DropdownNotification = () => {
         </div>
 
         <ul className="flex h-auto flex-col overflow-y-auto">
-          {notifications.map((notification, index) => (
+          {alerts.map((notification, index) => (
             <li key={index}>
               <Link
                 className="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
@@ -91,8 +74,7 @@ const DropdownNotification = () => {
                   <span className="text-black dark:text-white">{notification.title}</span>{" "}
                   {notification.description}
                 </p>
-
-                <p className="text-xs">{notification.date}</p>
+                <p className="text-xs">{notification.timestamp}</p>
               </Link>
             </li>
           ))}

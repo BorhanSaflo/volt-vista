@@ -4,12 +4,7 @@ import clsx from "clsx";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { MouseEvent } from "react";
 
-const CardContent = ({
-  title,
-  value,
-  rate,
-  levelUp,
-  icon }: CardStats) => {
+const CardContent = ({ title, value, rate, levelUp, icon }: CardStats) => {
   return (
     <>
       <div className="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
@@ -20,24 +15,32 @@ const CardContent = ({
           <h4 className="text-title-md font-bold text-black dark:text-white">{value}</h4>
           <span className="text-sm font-medium">{title}</span>
         </div>
-        {
-          rate && (
-            <span
-              className={clsx("flex items-center gap-1 text-sm font-medium", {
-                "text-meta-3": levelUp,
-                "text-meta-1": !levelUp,
-              })}>
-              {rate}
-              {levelUp ? <ArrowUp className="fill-meta-3" size={15} /> : <ArrowDown className="fill-meta-1" size={15} />}
-            </span>
-          )
-        }
+        {rate && (
+          <span
+            className={clsx("flex items-center gap-1 text-sm font-medium", {
+              "text-meta-3": levelUp,
+              "text-meta-1": !levelUp,
+            })}>
+            {rate}
+            {levelUp ? (
+              <ArrowUp className="fill-meta-3" size={15} />
+            ) : (
+              <ArrowDown className="fill-meta-1" size={15} />
+            )}
+          </span>
+        )}
       </div>
     </>
   );
-}
+};
 
-const HoverSpotlightWrapper = ({ children, levelUp }: { children: React.ReactNode, levelUp?: boolean }) => {
+const HoverSpotlightWrapper = ({
+  children,
+  levelUp,
+}: {
+  children: React.ReactNode;
+  levelUp?: boolean;
+}) => {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
 
@@ -58,7 +61,13 @@ const HoverSpotlightWrapper = ({ children, levelUp }: { children: React.ReactNod
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${mouseX}px ${mouseY}px,
-              ${levelUp !== undefined ? levelUp ? "rgba(255, 255, 255, 0.2)" : "rgba(0, 0, 0, 0.2)" : "rgba(255, 255, 255, 0.2)"} 0%, 
+              ${
+                levelUp !== undefined
+                  ? levelUp
+                    ? "rgba(0, 255, 0, 0.2)"
+                    : "rgba(255, 0, 0, 0.2)"
+                  : "rgba(255, 255, 255, 0.2)"
+              } 0%, 
               transparent 80%
             )
       `,
@@ -67,7 +76,7 @@ const HoverSpotlightWrapper = ({ children, levelUp }: { children: React.ReactNod
       {children}
     </div>
   );
-}
+};
 
 export default function CardDataStats({
   title,
@@ -86,8 +95,7 @@ export default function CardDataStats({
   }
 
   return (
-    <div
-      className="relative rounded-md border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark">
+    <div className="relative rounded-md border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark">
       <CardContent title={title} value={value} rate={rate} levelUp={levelUp} icon={icon} />
     </div>
   );

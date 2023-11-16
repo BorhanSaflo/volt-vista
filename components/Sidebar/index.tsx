@@ -67,8 +67,9 @@ export default function Sidebar() {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-55 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}>
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-50 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+        sidebarOpen ? "translate-x-0" : "-translate-x-full"
+      }`}>
       <div className="flex items-center justify-center gap-2 px-6">
         <button
           ref={trigger}
@@ -86,7 +87,7 @@ export default function Sidebar() {
       </div>
 
       <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
-        <nav className="py-4 px-4">
+        <nav className="py-4 px-2">
           <div>
             <ul className="mb-6 flex flex-col gap-1.5">
               {links.map((link) => (

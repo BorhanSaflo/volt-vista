@@ -46,6 +46,27 @@ export const dashboardStats: CardStats[] = [
   },
 ];
 
+export const alerts: Alert[] = [
+    {
+      title: "New Device Added",
+      description: "You have added a new smart plug.",
+      type: "info",
+      timestamp: "2 hours ago",
+    },
+    {
+      title: "Consumption Alert",
+      description: "Device #8 has exceeded the limit of 2 kWh.",
+      type: "warning",
+      timestamp: "10 hours ago",
+    },
+    {
+      title: "New Device Added",
+      description: "You have added a new smart bulb.",
+      type: "info",
+      timestamp: "12 hours ago",
+    },
+  ];
+
 export const deviceData: DeviceData[] = [
   {
     id: 1,
