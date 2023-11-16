@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function page() {
   return (
     <section className="bg-[#000] relative h-screen w-screen">
-      <span className="z-10 absolute top-5 right-5 bg-[#a3e0b7] text-green-950 text-xs lg:text-base font-black p-1 rounded-md opacity-60 cursor-default">
-        Prototype
+      <span className="z-10 absolute top-5 left-5 bg-[#a3e0b7] text-green-950 text-xs lg:text-sm font-black p-1 rounded-md opacity-60 cursor-default">
+        This App Is a Prototype
       </span>
       <div className="absolute top-0 right-0 h-screen w-screen lg:w-[55%]">
         <video src="./videos/video.mp4" playsInline muted loop autoPlay controls={false} className="object-cover h-full w-full opacity-50 lg:opacity-100" />
@@ -25,7 +25,7 @@ export default function page() {
             Over Your Energy
           </h2>
           <p className={"text-base lg:text-lg text-[#BFDBC8] mb-2 max-w-[320px]"}>
-            An energy monitoring and management solution tailored for homeowners.
+            An energy monitoring and management application tailored for homeowners.
           </p>
           <div className="flex gap-4 items-center flex-wrap justify-center lg:justify-start">
             <Link

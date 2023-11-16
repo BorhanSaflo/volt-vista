@@ -1,46 +1,11 @@
 import React from "react";
 import ChartOne from "@/components/Graph/LineGraph";
 import CardDataStats from "@/components/CardDataStats";
-import { CircleDollarSign, Leaf, PlugZap, Zap } from "lucide-react";
+import { dashboardStats } from "@/data/sampleData";
 
 export const metadata = {
   title: "Dashboard",
 };
-
-const stats = [
-  {
-    title: "Total Cost",
-    total: "$423",
-    rate: "5.43%",
-    levelUp: true,
-    levelDown: false,
-    icon: <CircleDollarSign size={24} />,
-  },
-  {
-    title: "Total Usage",
-    total: "20 kWh",
-    rate: "8.12%",
-    levelUp: true,
-    levelDown: false,
-    icon: <Zap size={24} />,
-  },
-  {
-    title: "Total Savings",
-    total: "$23",
-    rate: "1.5%",
-    levelUp: true,
-    levelDown: false,
-    icon: <Leaf size={24} />,
-  },
-  {
-    title: "Active Devices",
-    total: "20",
-    rate: "5%",
-    levelUp: false,
-    levelDown: true,
-    icon: <PlugZap size={24} />,
-  },
-];
 
 export default function Dashboard() {
   return (
@@ -59,14 +24,13 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-        {stats.map((stat, index) => (
+        {dashboardStats.map((stat, index) => (
           <CardDataStats
             key={index}
             title={stat.title}
             total={stat.total}
             rate={stat.rate}
             levelUp={stat.levelUp}
-            levelDown={stat.levelDown}
             icon={stat.icon}
           />
         ))}

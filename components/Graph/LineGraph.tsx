@@ -2,6 +2,7 @@
 import { ApexOptions } from "apexcharts";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
+import { monthlyUsage } from "@/data/sampleData";
 const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const options: ApexOptions = {
@@ -95,7 +96,7 @@ const options: ApexOptions = {
       },
     },
     min: 0,
-    max: 1200,
+    max: Math.max(...monthlyUsage) + 200,
     labels: {
       formatter: (value: number) => {
         return value + " kWh";
@@ -116,7 +117,7 @@ export default function ChartOne() {
     series: [
       {
         name: "Usage",
-        data: [845, 854, 970, 890, 900, 910, 840, 930, 790, 950, 960, 890],
+        data: monthlyUsage,
       },
     ],
   });

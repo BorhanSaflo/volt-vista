@@ -2,25 +2,15 @@
 import { ArrowDown, ArrowUp } from "lucide-react";
 import clsx from "clsx";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
-import { MouseEvent, ReactNode } from "react";
-
-interface CardDataStatsProps {
-  title: string;
-  total: string;
-  rate: string;
-  levelUp?: boolean;
-  levelDown?: boolean;
-  icon: ReactNode;
-}
+import { MouseEvent } from "react";
 
 export default function CardDataStats({
   title,
   total,
   rate,
   levelUp,
-  levelDown,
   icon,
-}: CardDataStatsProps) {
+}: CardStats) {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
 
@@ -41,7 +31,7 @@ export default function CardDataStats({
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${mouseX}px ${mouseY}px,
-              rgba(${levelUp ? "0, 255, 0" : levelDown ? "255, 0, 0" : "0, 0, 0"}, 0.1),
+              rgba(${levelUp ? "0, 255, 0" : "255, 0, 0"}, 0.1),
               transparent 80%
             )
           `,
@@ -58,11 +48,10 @@ export default function CardDataStats({
         <span
           className={clsx("flex items-center gap-1 text-sm font-medium", {
             "text-meta-3": levelUp,
-            "text-meta-1": levelDown,
+            "text-meta-1": !levelUp,
           })}>
           {rate}
-          {levelUp && <ArrowUp className="fill-meta-3" size={15} />}
-          {levelDown && <ArrowDown className="fill-meta-1" size={15} />}
+          {levelUp ? <ArrowUp className="fill-meta-3" size={15} /> : <ArrowDown className="fill-meta-1" size={15} />}
         </span>
       </div>
     </div>

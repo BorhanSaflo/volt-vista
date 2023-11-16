@@ -67,9 +67,8 @@ export default function Sidebar() {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-55 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
-        sidebarOpen ? "translate-x-0" : "-translate-x-full"
-      }`}>
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-55 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}>
       <div className="flex items-center justify-center gap-2 px-6">
         <button
           ref={trigger}
@@ -97,7 +96,7 @@ export default function Sidebar() {
                     className={clsx(
                       "group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4",
                       {
-                        "bg-graydark dark:bg-meta-4": pathname === link.href,
+                        "bg-meta-4": pathname === link.href,
                       }
                     )}>
                     <link.icon size={18} />
