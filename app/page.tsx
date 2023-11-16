@@ -4,9 +4,6 @@ import Link from "next/link";
 export default function page() {
   return (
     <section className="bg-[#000] relative h-screen w-screen">
-      <span className="z-10 absolute top-5 left-5 bg-[#a3e0b7] text-green-950 text-xs lg:text-sm font-black p-1 rounded-md opacity-60 cursor-default">
-        This App Is a Prototype
-      </span>
       <div className="absolute top-0 right-0 h-screen w-screen lg:w-[55%]">
         <video
           src="./videos/video.mp4"
