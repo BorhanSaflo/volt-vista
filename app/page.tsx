@@ -14,6 +14,9 @@ export default function page() {
           "hidden lg:block z-1 absolute w-[45%] h-screen top-0 left-0 opacity-10 bg-gradient-to-r from-green-600 to-[#000]"
         }
       />
+      <span className="z-10 absolute top-5 right-5 bg-[#BFDBC8] text-green-950 text-xs font-black p-1 rounded-md opacity-70">
+        Prototype
+      </span>
       <div
         className="z-10 absolute w-full lg:w-auto p-10 top-1/2 left-1/2 lg:top-1/2 lg:left-10 3xl:left-60 transform -translate-x-1/2 -translate-y-1/2 lg:translate-x-0">
         <div className="flex flex-col justify-center gap-3 w-full items-center lg:items-start text-center lg:text-left lg:max-w-[350px]">
