@@ -4,6 +4,12 @@ import Link from "next/link";
 export default function page() {
   return (
     <section className="bg-[#000] relative h-screen w-screen">
+      <a
+        className="z-10 absolute top-5 right-5 bg-[#a3e0b7] text-green-950 text-xs lg:text-sm font-black p-1 rounded-md opacity-60"
+        href="https://github.com/BorhanSaflo/volt-vista"
+        target="_blank">
+        This App Is a Prototype
+      </a>
       <div className="absolute top-0 right-0 h-screen w-screen lg:w-[55%]">
         <video
           src="./videos/video.mp4"

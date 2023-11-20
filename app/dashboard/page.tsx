@@ -1,7 +1,8 @@
 import React from "react";
 import ChartOne from "@/components/Graph/LineGraph";
-import CardDataStats from "@/components/CardDataStats";
-import { dashboardStats } from "@/data/sampleData";
+import StatCard from "@/components/StatCard";
+import { dashboardStats, feedback } from "@/data/sampleData";
+import FeedbackCard from "@/components/FeedbackCard";
 
 export const metadata = {
   title: "Dashboard",
@@ -15,25 +16,45 @@ export default function Dashboard() {
           Welcome back, User
         </h2>
       </div>
-      <div className="mb-4 grid grid-cols-12 gap-4 md:mb-6 md:gap-6 2xl:mb-7.5 2xl:gap-7.5">
-        <ChartOne />
-        <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
-          <div className="mb-4 justify-between gap-4 sm:flex">
-            <h4 className="text-xl font-semibold text-black dark:text-white">Feedback</h4>
+      <div className="grid grid-cols-12 gap-4 md:mb-6 md:gap-6 2xl:mb-5 2xl:gap-5">
+        <div className="col-span-12 xl:col-span-8">
+          <ChartOne />
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-5 mt-5">
+            {dashboardStats.slice(0, 4).map((stat, index) => (
+              <StatCard
+                key={index}
+                title={stat.title}
+                value={stat.value}
+                rate={stat.rate}
+                levelUp={stat.levelUp}
+                icon={stat.icon}
+              />
+            ))}
           </div>
         </div>
-      </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-        {dashboardStats.map((stat, index) => (
-          <CardDataStats
-            key={index}
-            title={stat.title}
-            value={stat.value}
-            rate={stat.rate}
-            levelUp={stat.levelUp}
-            icon={stat.icon}
-          />
-        ))}
+        <div className="col-span-12 rounded-md border border-stroke bg-white p-4 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
+          <div className="flex flex-col gap-3 h-full">
+            <h4 className="text-xl font-semibold text-black dark:text-white">Feedback</h4>
+            <div className="flex flex-col gap-3 justify-between h-full">
+              <div className="flex flex-col gap-3">
+                {feedback.map((item, index) => (
+                  <FeedbackCard
+                    key={index}
+                    deviceName={item.deviceName}
+                    energyUsage={item.energyUsage}
+                    suggestion={item.suggestion}
+                    severity={item.severity}
+                  />
+                ))}
+              </div>
+              <div className="flex justify-center">
+                <button className="font-semibold rounded-md px-6 py-2 dark:bg-meta-4 dark:text-white bg-meta-2 text-black">
+                  View All
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

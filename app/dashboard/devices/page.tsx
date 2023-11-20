@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function page() {
   return (
-    <div className="rounded-sm border border-stroke shadow-default dark:border-strokedark ">
+    <div className="rounded-md border border-stroke shadow-default dark:border-strokedark ">
       <div className="py-6 px-4 md:px-6 xl:px-7.5 bg-white dark:bg-black">
         <h4 className="text-xl font-semibold text-black dark:text-white">
           Total Devices ({deviceData.length})

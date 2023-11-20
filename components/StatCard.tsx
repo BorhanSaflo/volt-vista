@@ -7,7 +7,7 @@ import { MouseEvent } from "react";
 const CardContent = ({ title, value, rate, levelUp, icon }: CardStats) => {
   return (
     <>
-      <div className="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
+      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
         {icon}
       </div>
       <div className="mt-4 flex items-end justify-between">
@@ -53,7 +53,7 @@ const HoverSpotlightWrapper = ({
 
   return (
     <div
-      className="group relative rounded-md border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark"
+      className="group relative rounded-md border border-stroke bg-white py-6 px-6 shadow-default dark:border-strokedark dark:bg-boxdark select-none"
       onMouseMove={handleMouseMove}>
       <motion.div
         className="pointer-events-none absolute -inset-px rounded-md opacity-0 transition duration-300 group-hover:opacity-100"
@@ -64,9 +64,9 @@ const HoverSpotlightWrapper = ({
               ${
                 levelUp !== undefined
                   ? levelUp
-                    ? "rgba(0, 255, 0, 0.2)"
-                    : "rgba(255, 0, 0, 0.2)"
-                  : "rgba(255, 255, 255, 0.2)"
+                    ? "rgba(0, 255, 0, 0.1)"
+                    : "rgba(255, 0, 0, 0.1)"
+                  : "rgba(255, 255, 255, 0.1)"
               } 0%, 
               transparent 80%
             )
@@ -78,7 +78,7 @@ const HoverSpotlightWrapper = ({
   );
 };
 
-export default function CardDataStats({
+export default function StatCard({
   title,
   value,
   rate,

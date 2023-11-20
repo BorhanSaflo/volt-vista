@@ -123,17 +123,15 @@ export default function ChartOne() {
   });
 
   return (
-    <div className="col-span-12 rounded-sm border border-stroke bg-white p-5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
-      <div>
-        <div id="chartOne" className="-ml-5 h-[355px] w-[105%]">
-          <ReactApexChart
-            options={options}
-            series={state.series}
-            type="area"
-            width="100%"
-            height="100%"
-          />
-        </div>
+    <div className="rounded-md border border-stroke bg-white p-5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-6">
+      <div id="chartOne" className="-ml-5 h-full w-[110%] sm:w-[103%] sm:h-[450px]">
+        <ReactApexChart
+          options={options}
+          series={state.series}
+          type="area"
+          width="100%"
+          height="100%"
+        />
       </div>
     </div>
   );

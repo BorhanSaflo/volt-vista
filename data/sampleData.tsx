@@ -25,7 +25,7 @@ export const dashboardStats: CardStats[] = [
   },
   {
     title: "Total Usage",
-    value: "32.5 kWh",
+    value: "1,242 kWh",
     rate: "12.45%",
     levelUp: true,
     icon: <Zap size={24} />,
@@ -40,32 +40,65 @@ export const dashboardStats: CardStats[] = [
   {
     title: "Active Devices",
     value: "8",
-    rate: "2%",
+    rate: "1",
     levelUp: false,
     icon: <PlugZap size={24} />,
   },
 ];
 
+export const feedback: Feedback[] = [
+  {
+    deviceName: "Home Office Computer",
+    energyUsage: "40 kWh",
+    suggestion: "Turn off the computer when not in use instead of leaving it in sleep mode.",
+    severity: "low",
+  },
+  {
+    deviceName: "Garage Freezer",
+    energyUsage: "60 kWh",
+    suggestion: "Ensure the door seal is tight and defrost regularly for optimal efficiency.",
+    severity: "medium"
+  },
+  {
+    deviceName: "Garden Sprinkler System",
+    energyUsage: "20 kWh",
+    suggestion: "Adjust the schedule to early morning or late evening to reduce evaporation and energy use.",
+    severity: "low",
+  },
+  {
+    deviceName: "Laundry Washing Machine",
+    energyUsage: "80 kWh",
+    suggestion: "Use cold water cycles and full loads to maximize energy efficiency.",
+    severity: "medium"
+  },
+  {
+    deviceName: "Dishwasher",
+    energyUsage: "120 kWh",
+    suggestion: "Run only when full and choose the eco-friendly setting if available.",
+    severity: "high",
+  }
+];
+
 export const alerts: Alert[] = [
-    {
-      title: "New Device Added",
-      description: "You have added a new smart plug.",
-      type: "info",
-      timestamp: "2 hours ago",
-    },
-    {
-      title: "Consumption Alert",
-      description: "Device #8 has exceeded the limit of 2 kWh.",
-      type: "warning",
-      timestamp: "10 hours ago",
-    },
-    {
-      title: "New Device Added",
-      description: "You have added a new smart bulb.",
-      type: "info",
-      timestamp: "12 hours ago",
-    },
-  ];
+  {
+    title: "New Device Added",
+    description: "You have added a new smart plug.",
+    type: "info",
+    timestamp: "2 hours ago",
+  },
+  {
+    title: "Consumption Alert",
+    description: "Device #8 has exceeded the limit of 2 kWh.",
+    type: "warning",
+    timestamp: "10 hours ago",
+  },
+  {
+    title: "New Device Added",
+    description: "You have added a new smart bulb.",
+    type: "info",
+    timestamp: "12 hours ago",
+  },
+];
 
 export const deviceData: DeviceData[] = [
   {

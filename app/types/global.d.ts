@@ -10,6 +10,14 @@ declare global {
     hoverSpotlight?: boolean;
   };
 
+  type Feedback = {
+    deviceName: string;
+    suggestion: string;
+    energyUsage: string;
+    severity?: "low" | "medium" | "high";
+    timestamp?: string;
+  };
+
   type DeviceData = {
     id: number;
     icon: LucideIcon;

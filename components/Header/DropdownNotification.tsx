@@ -57,7 +57,7 @@ const DropdownNotification = () => {
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
         className={clsx(
-          "absolute -right-27 mt-2.5 flex w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80",
+          "absolute -right-27 mt-2.5 flex w-75 flex-col rounded-md border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80",
           dropdownOpen ? "block" : "hidden"
         )}>
         <div className="px-4.5 py-3">

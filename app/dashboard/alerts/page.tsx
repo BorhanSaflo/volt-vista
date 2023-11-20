@@ -14,7 +14,9 @@ export default function page() {
       <h1 className="text-3xl font-bold text-black dark:text-white mb-4">Alerts</h1>
       <div className="flex flex-col items-center gap-4">
         {alerts.map((alert, index) => (
-          <div className="flex w-full items-center rounded-md bg-black p-4 gap-6" key={index}>
+          <div
+            className="flex w-full items-center rounded-md bg-white dark:bg-black p-4 gap-6"
+            key={index}>
             <AlertIcon type={alert.type} />
             <div className="flex flex-col gap-1">
               <h3 className="text-xl font-bold text-black dark:text-white">{alert.title}</h3>

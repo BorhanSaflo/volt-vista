@@ -1,4 +1,4 @@
-import CardDataStats from "@/components/CardDataStats";
+import StatCard from "@/components/StatCard";
 import { deviceData } from "@/data/sampleData";
 import { Power, Zap } from "lucide-react";
 interface DeviceProps {
@@ -10,7 +10,7 @@ export default function page({ params }: DeviceProps) {
 
   if (!device) {
     return (
-      <div className="rounded-sm border border-stroke shadow-default dark:border-strokedark ">
+      <div className="rounded-md border border-stroke shadow-default dark:border-strokedark ">
         <div className="py-6 px-4 md:px-6 xl:px-7.5 bg-white dark:bg-black">
           <h4 className="text-xl font-semibold text-black dark:text-white">Device Not Found</h4>
         </div>
@@ -23,13 +23,13 @@ export default function page({ params }: DeviceProps) {
       <h4 className="text-3xl font-semibold text-black dark:text-white mb-4">{device.name}</h4>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-        <CardDataStats
+        <StatCard
           title="Status"
           value={device.isOn ? "On" : "Off"}
           hoverSpotlight={false}
           icon={<Power size={24} />}
         />
-        <CardDataStats
+        <StatCard
           title="Current Consumption"
           value={`${device.usage} kWh`}
           hoverSpotlight={false}

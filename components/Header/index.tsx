@@ -20,7 +20,7 @@ export default function Header() {
               e.stopPropagation();
               toggleNavbar();
             }}
-            className="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm dark:border-strokedark dark:bg-boxdark lg:hidden">
+            className="z-99999 block rounded-md border border-stroke bg-white p-1.5 shadow-sm dark:border-strokedark dark:bg-boxdark lg:hidden">
             <Menu size={18} className="relative block h-5.5 w-5.5 cursor-pointer" />
           </button>
           <Link className="block flex-shrink-0 lg:hidden" href="/">
