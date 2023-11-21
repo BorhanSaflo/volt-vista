@@ -1,5 +1,5 @@
 import { alerts } from "@/data/sampleData";
-import { AlertCircle, AlertOctagon, CheckCircle, Info, LucideIcon } from "lucide-react";
+import { AlertCircle, AlertOctagon, CheckCircle, Info } from "lucide-react";
 
 const AlertIcon = ({ type }: { type: Alert["type"] }) => {
   if (type === "error") return <AlertOctagon size={32} className="text-red-500" />;
