@@ -10,11 +10,9 @@ const CardContent = ({ title, value, rate, levelUp, icon }: CardStats) => {
       <div className="flex h-11 w-11 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
         {icon}
       </div>
-      <div className="mt-4 flex items-end justify-between">
-        <div>
-          <h4 className="text-title-md font-bold text-black dark:text-white">{value}</h4>
-          <span className="text-sm font-medium">{title}</span>
-        </div>
+      <h4 className="mt-4 2xl:text-title-md font-bold text-black dark:text-white">{value}</h4>
+      <div className="mt-1 flex items-end justify-between">
+        <span className="text-sm font-medium">{title}</span>
         {rate && (
           <span
             className={clsx("flex items-center gap-1 text-sm font-medium", {

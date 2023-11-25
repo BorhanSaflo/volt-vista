@@ -30,7 +30,7 @@ export default function FeedbackCard({
 
   return (
     <div
-      className="group relative flex gap-5 rounded-md bg-meta-2 dark:bg-meta-4 px-4 py-5.5 border border-stroke dark:border-strokedark hover:border-slate-500 dark:hover:border-zinc-600 transition duration-300 cursor-pointer select-none"
+      className="group relative flex gap-5 rounded-md bg-meta-2 dark:bg-meta-4 px-4 py-4 2xl:py-5.5 border border-stroke dark:border-strokedark hover:border-slate-500 dark:hover:border-zinc-600 transition duration-300 cursor-pointer select-none"
       onMouseMove={handleMouseMove}>
       <motion.div
         className="pointer-events-none absolute -inset-px rounded-md opacity-0 transition duration-300 group-hover:opacity-100"
