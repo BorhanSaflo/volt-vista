@@ -12,7 +12,7 @@ export default function page() {
       </a>
       <div className="absolute top-0 right-0 h-screen w-screen lg:w-[55%]">
         <video
-          src="./videos/video.mp4"
+          src="./videos/preview.mp4"
           playsInline
           muted
           loop
